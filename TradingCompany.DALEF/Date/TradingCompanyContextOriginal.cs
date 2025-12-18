@@ -20,7 +20,14 @@ namespace TradingCompany.DALEF.Date
         public DbSet<UserModels> Users { get; set; }
         public DbSet<UserRoleModels> UserRoles { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("karoche");
+        {
+            // ЗМІНА 2: Додайте перевірку IsConfigured!
+            // Це запобігає підключенню SQL Server ("karoche"), якщо тест вже підключив In-Memory.
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("karoche");
+            }
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<LogModels>(entity =>

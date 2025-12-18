@@ -14,5 +14,9 @@ namespace TradingCompany.DALEF.Interfaces
         public void  Delete(int id);
         public List<UserDTO> GetAll ();
         public UserDTO GetById (int id);
+
+        public bool ValidateUser(string login, string password);
+        public UserDTO GetUserByLogin(string login);
+        public UserDTO GetUserByEmail(string email);
     }
 }

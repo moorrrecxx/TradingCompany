@@ -9,6 +9,13 @@ namespace TradingCompany.DALEF.MapperProfiles
         public MappingProfile() 
         {
             CreateMap<UserModels, UserDTO>().ReverseMap();
+            CreateMap<RoleModels, RoleDTO>().ReverseMap();
+            CreateMap<LogModels, LogDTO>().ReverseMap();
+            CreateMap<OrderModels, OrderDTO>().ReverseMap();
+            CreateMap<ShipmentModels, ShipmentDTO>().ReverseMap();
+            CreateMap<StatusModels, StatusDTO>().ReverseMap();
+            CreateMap<UserRoleModels, UserRoleDTO>().ReverseMap();
+
         }
 
     }

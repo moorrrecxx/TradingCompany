@@ -1,0 +1,21 @@
+﻿<Window x:Class="TradingCompany.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:TradingCompany.WPF.ViewModels"
+        xmlns:views="clr-namespace:TradingCompany.WPF.Views"
+        Title="Trading Manager" Height="600" Width="900" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:LoginViewModel}">
+            <views:LoginView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:AdminHomeViewModel}">
+            <views:AdminHomeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:UserHomeViewModel}">
+            <views:UserHomeView/>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <ContentControl Content="{Binding CurrentView}"/>
+    </Grid>
+</Window>

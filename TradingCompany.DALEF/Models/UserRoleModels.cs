@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TradingCompany.DALEF.Models
 {
+    [Table("User_Roles")]
     public class UserRoleModels
     {
         [Key]

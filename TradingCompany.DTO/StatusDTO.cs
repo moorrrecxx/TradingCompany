@@ -8,7 +8,7 @@ namespace TradingCompany.DTO
 {
     public class StatusDTO
     {
-        public int? StatusId { get; set; }
+        public int StatusId { get; set; }
         public string? StatusName { get; set; }
     }
 }

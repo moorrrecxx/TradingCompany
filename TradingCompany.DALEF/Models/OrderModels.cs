@@ -8,12 +8,12 @@ namespace TradingCompany.DALEF.Models
     public class OrderModels
     {
         [Key]
-        [Column("order_id")] // <--- ВИПРАВЛЕНО
+        [Column("order_id")] 
         public int OrderId { get; set; }
 
         [Required]
         [StringLength(100)]
-        [Column("customer_name")] // <--- ВИПРАВЛЕНО
+        [Column("customer_name")] 
         public string CustomerName { get; set; } = null!;
 
         [Required]
@@ -27,7 +27,7 @@ namespace TradingCompany.DALEF.Models
         public string Phone { get; set; } = null!;
 
         [Column("status_id")] 
-        public int StatusId { get; set; }
+        public int? StatusId { get; set; }
 
         [Column("created_at")] 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
